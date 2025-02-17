@@ -26,6 +26,6 @@ python app.py
 <br>
 <br>
 
-The Dataset  used here is open source houseing price dataset.
+The Dataset  used here is open source housing price dataset.
 
 #ThankYou
