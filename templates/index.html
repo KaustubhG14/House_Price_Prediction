@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</head>
+<body>
+    <h2>Enter House Details:</h2>
+    <form method="POST">
+        Bedrooms: <input type="number" name="bedrooms" required><br><br>
+        Bathrooms: <input type="number" step="0.5" name="bathrooms" required><br><br>
+        Size (sqft): <input type="number" name="sqft" required><br><br>
+        Location: 
+        <select name="location">
+            <option value="0">Location A</option>
+            <option value="1">Location B</option>
+            <option value="2">Location C</option>
+        </select>
+        <br><br>
+        <button type="submit">Predict Price</button>
+    </form>
+    
+    {% if prediction is not none %}
+        <h3>Predicted Price: ${{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
